@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Custom_List_2020
 {
-    public class CustomList<T> : IEnumerable<T>
+    public class CustomList<T> : IEnumerable
     {
         //Member Variables
 
@@ -59,17 +59,27 @@ namespace Custom_List_2020
         }
         public bool Remove(T item)
         {
+            bool found = false;
+            T[] tempArray = new T[capacity];
+            int j = 0; 
             for (int i = 0; i < count; i++)
             {
-                T[] tempArray = new T[]
                 if (myArray[i].Equals(item))
                 {
-                    tempArray[i] 
+                    found = true;
                 }
-                myArray = tempArray;
-                //return 
+                else
+                {
+                    tempArray[j] = myArray[i];
+                    j++;
+                } 
             }
-
+            if (found)
+            {
+                count--;
+            }
+            myArray = tempArray;
+            return found;
         }
       
         //public override string ToString(T item)
@@ -82,10 +92,6 @@ namespace Custom_List_2020
             throw new NotImplementedException();
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
 
         //overload Plus Operator
         //public static MyList<T> operator + (MyList<T> list1, MyList<T> list2)
