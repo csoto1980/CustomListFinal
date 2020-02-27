@@ -54,44 +54,28 @@ namespace Custom_List_2020
             {
                 myArray[count] = item;
             }
-            //increment count **CHECK**
             count++;
-            //if capacity is more than for increase capacity by 4
-            //check to make sure it persists
-            //count == maxcapacity, we need to increases capacity and copy
-            //increase the capacity start out of 4 make the size 8
-            //try adding 5 and make sure cap is 8
-            //arrange check to see make sure to put 5th in
-            //make sure one of the original 4 are still there.
+          
         }
         public bool Remove(T item)
         {
             for (int i = 0; i < count; i++)
             {
+                T[] tempArray = new T[]
                 if (myArray[i].Equals(item))
                 {
-                    count--;
-                    ShiftMyArray(i);
-                    return true;
+                    tempArray[i] 
                 }
+                myArray = tempArray;
+                //return 
             }
-            return false;
-            //deccrement count
-            //item needs to land at next available index
-            //check to make sure it persists
-            //count == maxcapacity, we need to decreases capacity and copy
+
         }
-        private void ShiftMyArray(int currentIndex)
-        {
-            for (int i = currentIndex; i < count; i++)
-            {
-                myArray[i] = myArray[i + 1];
-            }
-        }
-        public override string ToString(T item)
-        {
-            //public override string ToString()
-        }
+      
+        //public override string ToString(T item)
+        //{
+        //    //public override string ToString()
+        //}
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -105,5 +89,12 @@ namespace Custom_List_2020
 
         //overload Plus Operator
         //public static MyList<T> operator + (MyList<T> list1, MyList<T> list2)
+        //if capacity is more than for increase capacity by 4
+        //check to make sure it persists
+        //count == maxcapacity, we need to increases capacity and copy
+        //increase the capacity start out of 4 make the size 8
+        //try adding 5 and make sure cap is 8
+        //arrange check to see make sure to put 5th in
+        //make sure one of the original 4 are still there.
     }
 }

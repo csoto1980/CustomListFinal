@@ -16,6 +16,8 @@ namespace Custom_List_2020
             numbers.Add(6);
             numbers.Add(8);
             numbers.Add(10);
+
+            numbers.Remove(6);
         }
     }
 }
