@@ -7,13 +7,12 @@ using System.Threading.Tasks;
 
 namespace Custom_List_2020
 {
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : IEnumerable //IEmuberable - makes it possible to enumerate(mention a # of things one by one)
     {
         //Member Variables
-
         private T[] myArray; // Creatinog a private generic array | list has array capacity & count
         private int capacity; //how much is available | amount of seats in a bus
-        public int Capacity //need set
+        public int Capacity //Capacity property
         {
             get { return capacity; }
             set { capacity = value; }
@@ -37,9 +36,8 @@ namespace Custom_List_2020
             myArray = new T[capacity];
         }
         //Member Methods
-        public void Add(T item) //add to list /array
+        public void Add(T item)
         {
-            //get item into array at correct spot | item needs to land at the next avaial index*****
             if (count == capacity)
             {
                 T[] tempArray = new T[capacity *= 2];
@@ -55,7 +53,14 @@ namespace Custom_List_2020
                 myArray[count] = item;
             }
             count++;
-          
+            //if capacity is more than for increase capacity by 4
+            //check to make sure it persists
+            //count == maxcapacity, we need to increases capacity and copy
+            //increase the capacity start out of 4 make the size 8
+            //try adding 5 and make sure cap is 8
+            //arrange check to see make sure to put 5th in
+            //make sure one of the original 4 are still there.
+            //get item into array at correct spot | item needs to land at the next avaial index*****
         }
         public bool Remove(T item)
         {
@@ -81,26 +86,18 @@ namespace Custom_List_2020
             myArray = tempArray;
             return found;
         }
-      
+
         //public override string ToString(T item)
         //{
         //    //public override string ToString()
         //}
-
-        public IEnumerator<T> GetEnumerator()
+        
+        // Custom clas to be iterable
+        public IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
-
-
         //overload Plus Operator
-        //public static MyList<T> operator + (MyList<T> list1, MyList<T> list2)
-        //if capacity is more than for increase capacity by 4
-        //check to make sure it persists
-        //count == maxcapacity, we need to increases capacity and copy
-        //increase the capacity start out of 4 make the size 8
-        //try adding 5 and make sure cap is 8
-        //arrange check to see make sure to put 5th in
-        //make sure one of the original 4 are still there.
+
     }
 }

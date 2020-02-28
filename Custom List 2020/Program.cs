@@ -19,5 +19,16 @@ namespace Custom_List_2020
 
             numbers.Remove(6);
         }
+
+        //public int OverloadPlus(List<int>, List<int>)
+        //{
+
+        //}
+      
+        //List<int> one = new List<int> { 1, 3, 5 };
+        //List<int> two = new List<int> { 2, 1, 6 };
+        //List<int> result = one + two;
+
+        //Console.ForegroundColor = ConsoleColor.Cyan;
     }
 }
